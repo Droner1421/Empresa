@@ -1,0 +1,65 @@
+Endpoints selectos de la API de Empresas (incluyendo CRUD completo):
+
+========== CONSULTAS (GET) ==========
+
+GET /api/empresas/registro?page=x&limit=y - Listar empresas registradas.
+
+GET /api/empresas/vacantes/empresa/:id_empresa/activas?page=x&limit=y - Consultar vacantes activas de una empresa.
+
+GET /api/empresas/vacantes/modalidad/remoto?page=x&limit=y - Ver vacantes bajo modalidad remota.
+
+GET /api/empresas/postulaciones/vacante/:id_vacante?page=x&limit=y - Mostrar postulaciones a una vacante.
+
+GET /api/empresas/postulaciones/por-fecha?fechaInicio=yyyy-mm-dd&fechaFin=yyyy-mm-dd&page=x&limit=y - Consultar postulantes por fecha.
+
+GET /api/empresas/vacantes/count/cerradas - Contar vacantes cerradas.
+
+GET /api/empresas/postulantes/con-cv?page=x&limit=y - Listar postulantes con CV registrado.
+
+GET /api/empresas/vacantes/con-postulantes?page=x&limit=y - Mostrar vacantes junto con sus postulantes.
+
+GET /api/empresas - Listar todas las empresas.
+
+GET /api/empresas/:id - Obtener una empresa específica.
+
+GET /api/empresas/vacantes/all - Listar todas las vacantes.
+
+GET /api/empresas/vacante/:id - Obtener una vacante específica.
+
+GET /api/empresas/postulaciones/all - Listar todas las postulaciones.
+
+GET /api/empresas/postulacion/:id - Obtener una postulación específica.
+
+========== CREAR (POST) ==========
+
+POST /api/empresas - Crear una nueva empresa.
+
+POST /api/empresas/vacante - Crear una nueva vacante.
+
+POST /api/empresas/postulacion - Crear una nueva postulación.
+
+========== ACTUALIZAR (PATCH) ==========
+
+PATCH /api/empresas/:id - Actualizar una empresa.
+
+PATCH /api/empresas/vacante/:id - Actualizar una vacante.
+
+PATCH /api/empresas/vacante/:id/cerrar - Cerrar una vacante.
+
+PATCH /api/empresas/postulacion/:id - Actualizar una postulación.
+
+PATCH /api/empresas/postulacion/:id/estatus - Actualizar estatus de una postulación.
+
+========== ELIMINAR (DELETE) ==========
+
+DELETE /api/empresas/:id - Eliminar una empresa.
+
+DELETE /api/empresas/vacante/:id - Eliminar una vacante.
+
+DELETE /api/empresas/postulacion/:id - Eliminar una postulación.
+
+========== NOTAS ==========
+- Todos los endpoints requieren el prefijo /api según la configuración global.
+- Las consultas con parámetros opcionales (page, limit) funcionan por defecto con page=1, limit=10 si no se especifican.
+- Los IDs en rutas deben ser números enteros.
+- Para POST/PATCH, enviar JSON en el body con los campos requeridos según las interfaces de types.ts.

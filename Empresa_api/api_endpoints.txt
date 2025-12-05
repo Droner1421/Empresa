@@ -1,0 +1,68 @@
+API Endpoints - Conexiones y Peticiones (GET, POST, DELETE)
+
+Este archivo contiene todas las conexiones (endpoints) y tipos de peticiones HTTP (GET, POST, DELETE) utilizadas en la API de NestJS.
+
+============================
+MÓDULO EMPRESAS (/empresas)
+============================
+
+**Peticiones GET:**
+- GET /empresas?page=x&limit=y (Listar todas las empresas con paginación)
+- GET /empresas/registro?page=x&limit=y (Listar empresas registradas con paginación)
+- GET /empresas/giro/:giro?page=x&limit=y (Filtrar empresas por giro)
+- GET /empresas/:id (Obtener una empresa específica)
+- GET /empresas/vacantes/all?page=x&limit=y (Listar todas las vacantes)
+- GET /empresas/vacantes/empresa/:id_empresa/activas?page=x&limit=y (Vacantes activas de una empresa)
+- GET /empresas/vacantes/modalidad/remoto?page=x&limit=y (Vacantes con modalidad remota)
+- GET /empresas/vacantes/count/cerradas (Contar vacantes cerradas)
+- GET /empresas/vacantes/con-postulantes?page=x&limit=y (Vacantes con postulantes)
+- GET /empresas/vacante/:id (Obtener una vacante específica)
+- GET /empresas/postulaciones/all?page=x&limit=y (Listar todas las postulaciones)
+- GET /empresas/postulaciones/vacante/:id_vacante?page=x&limit=y (Postulaciones a una vacante)
+- GET /empresas/postulaciones/por-fecha?fechaInicio=yyyy-mm-dd&fechaFin=yyyy-mm-dd&page=x&limit=y (Postulaciones por fecha)
+- GET /empresas/postulantes/con-cv?page=x&limit=y (Postulantes con CV registrado)
+- GET /empresas/postulacion/:id (Obtener una postulación específica)
+
+**Peticiones POST:**
+- POST /empresas (Crear una nueva empresa)
+- POST /empresas/vacante (Crear una nueva vacante)
+- POST /empresas/postulacion (Crear una nueva postulación)
+
+**Peticiones DELETE:**
+- DELETE /empresas/:id (Eliminar una empresa)
+- DELETE /empresas/vacante/:id (Eliminar una vacante)
+- DELETE /empresas/postulacion/:id (Eliminar una postulación)
+
+============================
+MÓDULO ARTISTAS (/artistas)
+============================
+
+**Peticiones GET:**
+- GET /artistas?page=x&limit=y (Listar todos los artistas con paginación)
+- GET /artistas/activos?page=x&limit=y (Listar artistas activos)
+- GET /artistas/pais/:pais?page=x&limit=y (Filtrar artistas por país)
+- GET /artistas/:id (Obtener un artista específico)
+- GET /artistas/albums/all?page=x&limit=y (Listar todos los álbumes)
+- GET /artistas/albums/artista/:id_artista?page=x&limit=y (Álbumes de un artista)
+- GET /artistas/albums/ano/:ano?page=x&limit=y (Álbumes por año)
+- GET /artistas/albums/con-canciones?page=x&limit=y (Álbumes con canciones)
+- GET /artistas/albums/:id (Obtener un álbum específico)
+- GET /artistas/canciones/all?page=x&limit=y (Listar todas las canciones)
+- GET /artistas/canciones/top?limit=x&page=y (Canciones top)
+- GET /artistas/canciones/genero/count (Contar canciones por género)
+- GET /artistas/canciones/album/:id_album?page=x&limit=y (Canciones de un álbum)
+- GET /artistas/canciones/:id (Obtener una canción específica)
+
+**Peticiones POST:**
+- POST /artistas (Crear un nuevo artista)
+- POST /artistas/album (Crear un nuevo álbum)
+- POST /artistas/cancion (Crear una nueva canción)
+
+**Peticiones DELETE:**
+- DELETE /artistas/:id (Eliminar un artista)
+- DELETE /artistas/album/:id (Eliminar un álbum)
+- DELETE /artistas/cancion/:id (Eliminar una canción)
+
+============================
+NOTA: También se usan PATCH para operaciones de actualización, pero no se incluyen aquí según la solicitud.
+============================
